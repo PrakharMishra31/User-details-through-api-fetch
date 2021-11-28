@@ -8,10 +8,11 @@ const getDetails = async function () {
     const resp = await fetch(url);
     const data = await resp.json();
     table.classList.remove("hidden");
+    console.log(data);
     data.forEach((el) => {
       const detailRow = document.createElement("tr");
       detailRow.innerHTML = `<td>${el.name}</td>
-      <td>${el.city}</td>
+      <td>${el.address.city}</td>
       <td>${el.email}</td>
       <td>${el.phone}</td>`;
       tableDetails.appendChild(detailRow);
